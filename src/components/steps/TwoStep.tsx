@@ -1,6 +1,5 @@
 "use client"
 import React, {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
 import {useAppStore} from "@/store/slice";
 import {shallow} from "zustand/shallow";
 import ParseXlsFile from "@/components/steps/ParseXlsFile";
@@ -20,6 +19,7 @@ function TwoStep() {
                 return (<StepTwo/>);
         }
     }
+
     return (
         <div className="home-page">
             <header>
@@ -68,7 +68,6 @@ const StepOne = ({handleNextStep}) => {
 
 const StepTwo = () => {
     const initAllExpences = useAppStore((state) => state.initAllExpences, shallow);
-    const router = useRouter();
     const [isDataLoaded, setIsDataLoaded] = useState(false);
     const loadDemoData = async () => {
         const response = await fetch('/demo/demo.xlsx');
@@ -76,13 +75,6 @@ const StepTwo = () => {
         ParseXlsFile(data, initAllExpences);
         setIsDataLoaded(true);
     }
-
-    useEffect(() => {
-        if (isDataLoaded) {
-            router.push('/dashboard');
-        }
-    }, [isDataLoaded]);
-
 
     return (
         <div className="step-two-container">

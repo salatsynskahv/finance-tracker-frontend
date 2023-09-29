@@ -1,18 +1,15 @@
 import {useRef} from "react";
-import {useRouter} from "next/navigation";
 import {shallow} from "zustand/shallow";
 import {useAppStore} from "@/store/slice";
 import ParseXlsFile from "@/components/steps/ParseXlsFile";
 
 const DownloadFile = () => {
     const fileInputRef = useRef();
-    const router = useRouter();
 
     const initAllExpences = useAppStore((state) => state.initAllExpences, shallow);
 
     const onInputFileChange = (e) => {
         ParseXlsFile(e.target.file[0], initAllExpences);
-        // router.push('/dashboard');
     }
 
 
