@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {signInWithPopup} from "firebase/auth";
-import {auth, provider} from "@/firebase";
-import {useAppStore} from "@/app/store/slice";
+import {auth, provider} from "src/firebase";
+import {useAppStore} from "@/store/slice";
 import {shallow} from "zustand/shallow";
 import {FcGoogle} from "react-icons/fc";
 

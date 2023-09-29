@@ -4,11 +4,11 @@ import {useState} from "react";
 
 import {shallow} from "zustand/shallow";
 import {useRouter} from "next/navigation";
-import Tabs from "../components/Tabs";
-import {useAppStore} from "../store/slice";
-import CategoryList from "../components/categoryDashboard/CategoryList";
-import AllList from "../components/AllList";
-import Statistics from "../components/chart/Statistics";
+import Tabs from "../../components/Tabs";
+import {useAppStore} from "../../store/slice";
+import CategoryList from "../../components/categoryDashboard/CategoryList";
+import AllList from "../../components/AllList";
+import Statistics from "../../components/chart/Statistics";
 
 export default function Page() {
     const [tabState, setTabState] = useState([1, 0, 0]);

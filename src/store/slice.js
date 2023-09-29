@@ -1,6 +1,7 @@
 import {create} from 'zustand';
+import {createWithEqualityFn} from "zustand/traditional";
 
-export const useAppStore = create((set) => (
+export const useAppStore = createWithEqualityFn((set) => (
         {
             username: '',
             allExpences: [],

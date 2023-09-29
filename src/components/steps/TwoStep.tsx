@@ -1,11 +1,11 @@
 "use client"
 import React, {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
-import {useAppStore} from "@/app/store/slice";
+import {useAppStore} from "@/store/slice";
 import {shallow} from "zustand/shallow";
-import ParseXlsFile from "@/app/components/steps/ParseXlsFile";
-import DownloadFile from "@/app/components/steps/DownloadFile";
-import Login from "@/app/components/steps/Login";
+import ParseXlsFile from "@/components/steps/ParseXlsFile";
+import DownloadFile from "@/components/steps/DownloadFile";
+import Login from "@/components/steps/Login";
 
 function TwoStep() {
     const [step, setStep] = useState(0);
