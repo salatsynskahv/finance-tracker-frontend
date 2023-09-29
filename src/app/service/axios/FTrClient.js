@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const FTrClient = axios.create({
-    baseURL: process.env.BACKEND_URL || 'http://localhost:3001',
+    baseURL: 'https://finance-tracker-back.vercel.app',
     timeout: 1000
 });
 
