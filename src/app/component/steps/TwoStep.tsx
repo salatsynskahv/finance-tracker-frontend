@@ -69,12 +69,21 @@ const StepOne = ({handleNextStep}) => {
 const StepTwo = () => {
     const initAllExpences = useAppStore((state) => state.initAllExpences, shallow);
     const router = useRouter();
+    const [isDataLoaded, setIsDataLoaded] = useState(false);
     const loadDemoData = async () => {
         const response = await fetch('/demo/demo.xlsx');
         const data = await response.arrayBuffer();
         ParseXlsFile(data, initAllExpences);
-        router.push('/dashboard');
+        setIsDataLoaded(true);
     }
+
+    useEffect(() => {
+        if (isDataLoaded) {
+            router.push('/dashboard');
+        }
+    }, [isDataLoaded]);
+
+
     return (
         <div className="step-two-container">
             <div className="download-data">

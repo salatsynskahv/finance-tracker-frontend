@@ -5,5 +5,4 @@ const FTrClient = axios.create({
     timeout: 1000
 });
 
-
 export default FTrClient;

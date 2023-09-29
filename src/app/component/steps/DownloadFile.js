@@ -12,7 +12,7 @@ const DownloadFile = () => {
 
     const onInputFileChange = (e) => {
         ParseXlsFile(e.target.file[0], initAllExpences);
-        router.push('/dashboard');
+        // router.push('/dashboard');
     }
 
 
