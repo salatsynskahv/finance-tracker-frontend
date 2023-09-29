@@ -32,6 +32,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "encoding": "^0.1.13",
     "postcss": "latest",
     "tailwindcss": "latest",
     "typescript": "latest"
