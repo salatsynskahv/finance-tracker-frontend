@@ -3,9 +3,11 @@ import {Accordion, AccordionBody, AccordionHeader, AccordionItem} from "react-he
 import {MdOutlineExpandMore} from "react-icons/md";
 import { TiDelete} from "react-icons/ti";
 import axios from "axios";
-import {useAppStore} from "@/app/store/slice";
+
 import {shallow} from "zustand/shallow";
-import FTrClient from "@/app/service/axios/FTrClient";
+import {useAppStore} from "../../store/slice";
+import FTrClient from "../../service/axios/FTrClient";
+
 
 const CategoryNamesList = ({categories, setCategories}) => {
     const username = useAppStore((state) => state.username, shallow);

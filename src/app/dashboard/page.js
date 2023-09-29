@@ -1,12 +1,14 @@
 "use client"
-import {useAppStore} from "@/app/store/slice";
+
 import {useState} from "react";
-import CategoryList from "@/app/dashboard/categoryDashboard/CategoryList";
-import AllList from "@/app/dashboard/AllList";
+
 import {shallow} from "zustand/shallow";
-import Statistics from "@/app/dashboard/chart/Statistics";
 import {useRouter} from "next/navigation";
-import Tabs from "./Tabs";
+import Tabs from "../components/Tabs";
+import {useAppStore} from "../store/slice";
+import CategoryList from "../components/categoryDashboard/CategoryList";
+import AllList from "../components/AllList";
+import Statistics from "../components/chart/Statistics";
 
 export default function Page() {
     const [tabState, setTabState] = useState([1, 0, 0]);

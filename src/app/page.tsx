@@ -1,4 +1,4 @@
-import TwoStep from "@/app/component/steps/TwoStep";
+import TwoStep from "@/app/components/steps/TwoStep";
 
 export default function Home() {
   return (

@@ -3,9 +3,9 @@ import React, {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {useAppStore} from "@/app/store/slice";
 import {shallow} from "zustand/shallow";
-import ParseXlsFile from "@/app/component/steps/ParseXlsFile";
-import DownloadFile from "@/app/component/steps/DownloadFile";
-import Login from "@/app/component/steps/Login";
+import ParseXlsFile from "@/app/components/steps/ParseXlsFile";
+import DownloadFile from "@/app/components/steps/DownloadFile";
+import Login from "@/app/components/steps/Login";
 
 function TwoStep() {
     const [step, setStep] = useState(0);

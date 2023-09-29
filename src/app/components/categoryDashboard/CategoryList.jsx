@@ -5,12 +5,12 @@ import {FormControl, MenuItem, Select} from "@mui/material";
 import {CiEdit} from "react-icons/ci";
 import {FcCheckmark} from "react-icons/fc";
 import {VscClose} from "react-icons/vsc";
-import CreateCategory from "@/app/dashboard/categoryDashboard/CreateCategory";
-import CategoryNamesList from "@/app/dashboard/categoryDashboard/CategoryNamesList";
-import {useAppStore} from "@/app/store/slice";
 import {shallow} from "zustand/shallow";
-import FTrClient from "@/app/service/axios/FTrClient";
 import PopoverCategoryChange from "./PopoverCategoryChange";
+import {useAppStore} from "../../store/slice";
+import FTrClient from "../../service/axios/FTrClient";
+import CreateCategory from "./CreateCategory";
+import CategoryNamesList from "./CategoryNamesList";
 
 const CategoryList = ({allRecords}) => {
     console.log(process.env.BACKEND_URL);

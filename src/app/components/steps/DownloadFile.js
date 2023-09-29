@@ -2,7 +2,7 @@ import {useRef} from "react";
 import {useRouter} from "next/navigation";
 import {shallow} from "zustand/shallow";
 import {useAppStore} from "@/app/store/slice";
-import ParseXlsFile from "@/app/component/steps/ParseXlsFile";
+import ParseXlsFile from "@/app/components/steps/ParseXlsFile";
 
 const DownloadFile = () => {
     const fileInputRef = useRef();

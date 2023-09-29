@@ -1,9 +1,7 @@
-import React, {useRef, useState} from 'react';
-import {Button, Popover} from "@mui/material";
+import React, { useState} from 'react';
+import {Popover} from "@mui/material";
 import {MdOutlineAddCircleOutline} from "react-icons/md";
 import axios from "axios";
-import {useAppStore} from "@/app/store/slice";
-import {error} from "next/dist/build/output/log";
 
 
 const CreateCategory = ({setCategories}) => {

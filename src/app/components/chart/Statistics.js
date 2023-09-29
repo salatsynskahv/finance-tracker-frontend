@@ -1,4 +1,5 @@
-import PieChart from "@/app/dashboard/chart/PieChart";
+import PieChart from "./PieChart";
+
 
 const Statistics = () => {
     return (<div>
