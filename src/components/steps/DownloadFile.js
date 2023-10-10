@@ -20,7 +20,7 @@ const DownloadFile = () => {
             <input type="file"
                    id="file-input"
                    ref={fileInputRef}
-                   accept=".xls"
+                   // accept=".xls"
                    onChange={onInputFileChange}
             />
     </div>)

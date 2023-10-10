@@ -1,10 +1,11 @@
-"use client"
+'use client'
 import React, {useEffect, useState} from "react";
 import {useAppStore} from "@/store/slice";
 import {shallow} from "zustand/shallow";
 import ParseXlsFile from "@/components/steps/ParseXlsFile";
 import DownloadFile from "@/components/steps/DownloadFile";
 import Login from "@/components/steps/Login";
+import { redirect } from 'next/navigation'
 
 function TwoStep() {
     const [step, setStep] = useState(0);
@@ -16,7 +17,9 @@ function TwoStep() {
             case 0:
                 return (<StepOne handleNextStep={handleNextStep}/>);
             case 1:
-                return (<StepTwo/>);
+                return (<StepTwo handleNextStep={handleNextStep}/>);
+            case 2:
+                return redirect('/dashboard');
         }
     }
 
@@ -66,7 +69,8 @@ const StepOne = ({handleNextStep}) => {
     )
 }
 
-const StepTwo = () => {
+// @ts-ignore
+const StepTwo = ({handleNextStep}) => {
     const initAllExpences = useAppStore((state) => state.initAllExpences, shallow);
     const [isDataLoaded, setIsDataLoaded] = useState(false);
     const loadDemoData = async () => {
@@ -75,6 +79,12 @@ const StepTwo = () => {
         ParseXlsFile(data, initAllExpences);
         setIsDataLoaded(true);
     }
+
+    useEffect(() => {
+        if(isDataLoaded){
+            handleNextStep();
+        }
+    }, [isDataLoaded]);
 
     return (
         <div className="step-two-container">

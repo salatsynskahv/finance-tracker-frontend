@@ -24,12 +24,6 @@ const CategoryList = ({allRecords}) => {
     const [sumByCategories, setSumByCategories] = useState({});
     const [onEdit, setOnEdit] = useState();
     const [selectedCategory, setSelectedCategory] = useState();
-    // const username = useAppStore((state) => state.username);
-    // const username = 'salatsynskahv@gmail.com';
-
-    //if user login and have categories - apply users
-    //if user logged and don't have categories - find used categories by user and copy them to table
-
 
     useEffect(() => {
             const getCategories = async () => {
@@ -88,6 +82,29 @@ const CategoryList = ({allRecords}) => {
 
         }, []
     );
+
+//GET FROM CHAT GPR CATEGORIES
+//     const listOfMccCodes = Array.from(new Set(allRecords.map(record => record.categoryCode))).join(' ');
+//     FTrClient.post('/processMccCodes', {
+//         listOfMccCodes
+//     }).then(response => {
+//         if(categories.length > 0) {
+//             return;
+//         }
+//         console.log(response.data.content);
+//         const categoriesObj = JSON.parse(response.data.content);
+//         console.log(categoriesObj);
+//         const categoriesArr = [];
+//         Object.keys(categoriesObj).forEach(value => {
+//             categoriesArr.push({'_id': value, name: value, codes: categoriesObj[value]});
+//         })
+//         console.log(categoriesArr);
+//         setCategories(categoriesArr);
+//         groupByCategoriesAllExpences(categoriesArr);
+//     });
+//
+// }, []
+// );
 
     useEffect(() => {
         initSumByCategories(sumByCategories);
