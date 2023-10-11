@@ -122,6 +122,11 @@ header {
   border-radius: 15px;
   ul {
     list-style:none;
+
+    li {
+      margin-left: 1rem;
+      padding-block: 3px;
+    }
   }
 
   .menu {
@@ -404,20 +409,23 @@ input[id="radio-3"] {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       background-color: $primary-color;
       color: $secondary-color;
+      box-shadow: 0 0 20px rgba(157, 203, 225, 0.7);
+
 
       &-current {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         background-color: $secondary-color;
+        box-shadow: 0 0 20px rgba(109, 181, 217, 0.7);/* Box shadow properties */
         color: $primary-color;
       }
     }
@@ -473,9 +481,14 @@ input[id="radio-3"] {
 
   .login-btn {
     border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
     background-color: $primary-color;
+
   }
 
 }

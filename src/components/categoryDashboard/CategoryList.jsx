@@ -138,18 +138,18 @@ const CategoryList = ({allRecords}) => {
             const foundByShopCategory = flatShopsCategories[currentValue.details];
             if (foundByShopCategory) {
                 (accumulator[foundByShopCategory.name] = accumulator[foundByShopCategory.name] || []).push(currentValue);
-                sumByCtgLocal[foundByShopCategory.name] = (sumByCtgLocal[foundByShopCategory.name] || 0) + currentValue.sum;
+                sumByCtgLocal[foundByShopCategory.name] = (sumByCtgLocal[foundByShopCategory.name] || 0) +  parseFloat(currentValue.sum);
                 return accumulator;
             }
             const foundByCodeCategory = flatCodesCategories[currentValue.categoryCode];
             if (foundByCodeCategory) {
                 console.log(foundByCodeCategory);
                 (accumulator[foundByCodeCategory.name] = accumulator[foundByCodeCategory.name] || []).push(currentValue);
-                sumByCtgLocal[foundByCodeCategory.name] = (sumByCtgLocal[foundByCodeCategory.name] || 0) + currentValue.sum;
+                sumByCtgLocal[foundByCodeCategory.name] = (sumByCtgLocal[foundByCodeCategory.name] || 0) +  parseFloat(currentValue.sum);
                 return accumulator;
             }
             (accumulator['Others'] = accumulator['Others'] || []).push(currentValue);
-            sumByCtgLocal['Others'] = (sumByCtgLocal['Others'] || 0) + currentValue.sum;
+            sumByCtgLocal['Others'] = (sumByCtgLocal['Others'] || 0) +  parseFloat(currentValue.sum);
             return accumulator;
         }, {});
         console.log(groupedByCtg);
@@ -209,7 +209,7 @@ const CategoryList = ({allRecords}) => {
             </>
         } else {
             return <>
-                <span>{key} <strong>{sumByCategories[key]}</strong></span>
+                <span>{key} <strong>{sumByCategories[key].toFixed(2)}</strong></span>
                 <button className="btn"
                         onClick={() => {
                             setOnEdit(key);

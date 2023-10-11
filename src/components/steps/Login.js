@@ -34,7 +34,8 @@ const Login = () => {
             }
             {
                 !name && <button className="login-btn" onClick={() => handleGoogleLogin()}>
-                    Login with Google <FcGoogle size="1.6em" style={{margin: "-3px 0 0 5px"}}/>
+                    Login with Google
+                    <FcGoogle size="1.6em" style={{marginInline: "5px 0"}}/>
                 </button>
             }
 

@@ -26,7 +26,6 @@ export default function Page() {
     return (
         <div className="tabs-main">
             {/*{username}*/}
-            Hello
             <div className="center-container">
                 <Tabs tabState={tabState} setTabState={setTabState}/>
             </div>
